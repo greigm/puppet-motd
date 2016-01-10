@@ -26,7 +26,7 @@ class motd (
 
   motd::header{'header':
     message => $delimiter,
-    order   => '00'
+    order   => '00',
   }
   concat::fragment { 'motd_header':
     target  => $motd,

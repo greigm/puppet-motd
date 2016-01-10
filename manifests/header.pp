@@ -11,11 +11,11 @@
 #
 # === Examples
 #    motd::header{"Welcome to ${::fqdn}"}
-define motd::header ($message = $title,$order = '05',$init_char = $motd::params::init_char) {
+define motd::header ($message = $title,$order = '05') {
 
   concat::fragment { "motd_frag_${name}":
     target  => '/etc/motd',
-    content => "${init_char} ${message}\n",
+    content => "${message}\n",
     order   => $order
   }
 }
