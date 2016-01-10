@@ -2,10 +2,7 @@
 class motd::params {
 
   # Specify an array of entries to appear at the top the /etc/motd file always.
-  $default_header = [
-    "Welcome to ${::fqdn}, ${::operatingsystem}, ${::operatingsystemrelease}",
-    'Archive of news is available in /etc/motd-archive',
-  ]
+  $default_header = []
 
   $motd_header    = hiera('motd_header',$default_header)
 
