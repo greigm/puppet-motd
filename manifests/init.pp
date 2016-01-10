@@ -35,7 +35,7 @@ class motd (
   }
   motd::header{ 'motd_footer':
     message => $delimiter,
-    order   => '10',
+    order   => '99',
   }
 
   file { '/etc/issue':
