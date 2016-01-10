@@ -2,6 +2,7 @@
 class motd (
   $motd_header          = $::motd::params::motd_header,
   $delimiter            = $::motd::params::delimiter,
+  $init_char            = $::motd::params::init_char,
   $issue_content        = $::motd::params::issue_content,
   $issue_line_length    = 80,
   $center_issue_content = false,
