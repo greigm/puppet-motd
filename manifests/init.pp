@@ -25,7 +25,7 @@ class motd (
   concat { $motd: mode => '0644', owner => 'root', group => 'root' }
 
   motd::header{'spacer':
-    message => "\n",
+    message => '',
     order   => '00',
   }
   motd::header{'header':
@@ -42,7 +42,7 @@ class motd (
     order   => '98',
   }
   motd::header{'spacer2':
-    message => "\n",
+    message => '',
     order   => '99',
   }
 
