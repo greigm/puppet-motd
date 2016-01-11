@@ -24,9 +24,13 @@ class motd (
   # Specify /etc/motd file.
   concat { $motd: mode => '0644', owner => 'root', group => 'root' }
 
+  motd::header{'spacer':
+    message => "\n",
+    order   => '00',
+  }
   motd::header{'header':
     message => $delimiter,
-    order   => '00',
+    order   => '01',
   }
   concat::fragment { 'motd_header':
     target  => $motd,
@@ -35,6 +39,10 @@ class motd (
   }
   motd::header{ 'motd_footer':
     message => $delimiter,
+    order   => '98',
+  }
+  motd::header{'spacer2':
+    message => "\n",
     order   => '99',
   }
 

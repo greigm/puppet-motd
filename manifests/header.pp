@@ -16,7 +16,7 @@ define motd::header ($message = $title,$order = '05') {
   concat::fragment { "motd_frag_${name}":
     target  => '/etc/motd',
     content => "${message}\n",
-    order   => $order
+    order   => $order,
   }
 }
 
