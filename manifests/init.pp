@@ -33,7 +33,6 @@ class motd (
     order   => '01',
   }
   concat::fragment { 'motd_header':
-    ensure  => present,
     target  => $motd,
     content => template('motd/motd.erb'),
     order   => '03',

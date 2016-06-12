@@ -52,7 +52,6 @@ define motd::news ($date, $newstitle = $title, $message = undef) {
 
   if ($currentdate < $newsdate) {
     concat::fragment { "motd_frag_${title}":
-      ensure  => present,
       target  => '/etc/motd',
       content => template('motd/news.erb'),
       order   => "07-${date}",
@@ -60,7 +59,6 @@ define motd::news ($date, $newstitle = $title, $message = undef) {
   }
 
   concat::fragment { "motd_archive_frag_${date}_${title}":
-    ensure  => present,
     target  => $motd_archive_files,
     content => template('motd/news.erb'),
     order   => "01-${date}",
